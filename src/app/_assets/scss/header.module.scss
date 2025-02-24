@@ -1,0 +1,54 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100px;
+    padding: 0 2em;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    .nav {
+        display: flex;
+        width: 100%;
+        font-size: 24px;
+        justify-content: space-between;
+        &__logo {
+            margin-right: 2em;
+        }
+        &__menu {
+            display: flex;
+            > a {
+                display: block;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 3px;
+                    background-color: white;
+                    transition: width 0.35s ease;
+                }
+                &:hover, &.active {
+                    transition: color 0.35s ease;
+                    &:after {
+                        width: 100%;
+                    }
+                }
+                + a {
+                    margin-left: 2em;
+                }
+            }
+        }
+        &__socials {
+            display: flex;
+            align-items: center;
+            > a {
+                + a {
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+}

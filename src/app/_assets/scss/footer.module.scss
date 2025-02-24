@@ -1,0 +1,53 @@
+.footer {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    .nav {
+        display: flex;
+        width: 100%;
+        font-size: 24px;
+        justify-content: space-between;
+        &__logo {
+            margin-right: 2em;
+        }
+        &__menu {
+            display: flex;
+            &_left {
+               display: flex;
+               flex-direction: column;
+            }
+            &_right {
+                display: flex;
+                flex-direction: column;
+                margin-left: 2em;
+            }
+            a {
+                display: inline-block;
+                transition: opacity 0.35s ease;
+                opacity: 1;
+                &:hover, &.active {
+                   opacity: 0.5;
+                }
+                + a {
+                    margin-top: 15px;
+                }
+            }
+        }
+        &__socials {
+            display: flex;
+            align-items: center;
+            > a {
+                + a {
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+}
