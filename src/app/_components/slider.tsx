@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { EffectFade, Pagination, Autoplay } from 'swiper/modules';
 import { Josefin_Sans } from "next/font/google";
 import styles from "../_assets/scss/slider.module.scss";
 import Image from "next/image";
