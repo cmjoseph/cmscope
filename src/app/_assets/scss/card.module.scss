@@ -3,20 +3,20 @@
     top: 50%;
     z-index: 500;
     transform: translateY(-50%);
-    font-family: serif;
     padding: 0 10em;
     h2 {
         font-size: 32px;
         text-transform: uppercase;
         margin-bottom: 30px;
         color: white;
+        opacity: 0;
     }
     .container {
         display: flex;
         .left {
             img {
                 width: 200px;
-                height: 400px;
+                min-height: 400px;
                 object-fit: cover;
             }
         }
@@ -61,9 +61,11 @@
                     top: 5px;
                     font-size: 62px;
                 }
-                a.link {
-    
-                }
+            }
+            .link {
+                display: inline-block;
+                padding: 15px 2em;
+                background-color: red;
             }
         }
     }

@@ -2,6 +2,9 @@
 import styles from "../_assets/scss/card.module.scss";
 import Image from "next/image";
 import { Josefin_Sans } from "next/font/google";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const jobold = Josefin_Sans({
 	weight: '700',
@@ -10,10 +13,20 @@ const jobold = Josefin_Sans({
 
 // Movie card info on Home Slider
 export default function Card({card}: any) {
+    const latest = useRef(null);
+
+    useEffect(() => {
+        gsap.fromTo(
+            latest.current,
+            { opacity: 0, y: -25 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.5 }
+        );
+    }, []);
+
     if (card)
     return (
         <div className={`${styles.card} ${jobold.className}`}>
-            <h2>Latest Reviews</h2>
+            <h2 ref={latest}>Latest Reviews</h2>
             <div className={styles.container}>
                 <div className={styles.left}>
                     <Image
