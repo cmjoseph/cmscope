@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 	description: "Movie Critic Extraordinaire",
 };
 
-
 export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
 	<html lang="en">
