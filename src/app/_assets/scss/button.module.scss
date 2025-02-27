@@ -1,0 +1,25 @@
+.link {
+    position: relative;
+    display: inline-block;
+    padding: 15px 2em;
+    backdrop-filter: blur(4px);
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    border: 1px solid grey;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+    span {
+        position: relative;
+        top: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+}
