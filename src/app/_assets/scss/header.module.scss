@@ -5,7 +5,7 @@
     background-color: transparent;
     color: white;
     width: 100%;
-    height: 100px;
+    height: 70px;
     padding: 0 4em;
     display: flex;
     align-items: center;
@@ -18,13 +18,16 @@
         font-size: 24px;
         justify-content: space-between;
         &__logo {
-            margin-right: 2em;
+            width: 25%;
         }
         &__menu {
             display: flex;
+            justify-content: center;
+            width: 50%;
             > a {
                 display: block;
                 font-weight: 100;
+                margin-top: 3px;
                 &:after {
                     content: '';
                     display: block;
@@ -46,6 +49,8 @@
         }
         &__socials {
             display: flex;
+            justify-content: flex-end;
+            width: 25%;
             align-items: center;
             > a {
                 + a {
