@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { EffectFade, Pagination, Autoplay } from 'swiper/modules';
-import { Josefin_Sans, Anta } from "next/font/google";
-import { usePathname  } from "next/navigation";
+import { Josefin_Sans } from "next/font/google";
 import styles from "../_assets/scss/slider.module.scss";
 import Image from "next/image";
 import Link from "next/link";

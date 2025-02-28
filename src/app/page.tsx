@@ -1,5 +1,6 @@
 import styles from "./_assets/scss/page.module.scss";
 import SliderHome from "./_components/slider";
+import Upcoming from "./_components/upcoming";
 
 export default function Home() {
 	const reviews = [
@@ -37,31 +38,7 @@ export default function Home() {
   	return (
 		<div className={styles.home}>
 			<SliderHome reviews={reviews} />
-			<div className={styles.upcoming}>
-				<div className={styles.container}>
-					<h2>Upcoming Reviews</h2>
-					<div className={styles.grid}>
-						<div className={styles.grid_item}>
-							<div className={styles.overlay}>
-								{reviews[1].title}
-							</div>
-							<img src="/images/movies/historyofviolence/poster.jpg" alt="" />
-						</div>
-						<div className={styles.grid_item}>
-							<div className={styles.overlay}>
-								{reviews[0].title}
-							</div>
-							<img src="/images/movies/whiplash/poster.jpg" alt="" />
-						</div>
-						<div className={styles.grid_item}>
-							<div className={styles.overlay}>
-								{reviews[2].title}
-							</div>
-							<img src="/images/movies/fightclub/poster.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-			</div>
+			<Upcoming items={reviews} />
 		</div>
 	);
 }
