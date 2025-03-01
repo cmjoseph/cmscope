@@ -26,7 +26,7 @@ export default function Coming({items}: any) {
             },
         });
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
 

@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     .container {
-        padding: 5em 8em;
+        padding: 5em 10em;
         display: flex;
         width: 100%;
         flex-direction: column;
@@ -17,12 +17,10 @@
         }
         .grid {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
+            margin: 0 -2em;
             &_item {
                 position: relative;
-                width: 33.33%;
+                width: calc(33.33% - 4em);
                 height: 100%;
                 margin: 2em;
                 .overlay {
