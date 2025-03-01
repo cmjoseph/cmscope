@@ -12,7 +12,7 @@ export default function Page() {
         <div className={styles.news}>
             <h1>News</h1>
             <Image
-                src="/images/placeholder03.webp"
+                src="/images/slider/placeholder03.webp"
                 width={1920}
                 height={1080}
                 alt="Placeholder 03"

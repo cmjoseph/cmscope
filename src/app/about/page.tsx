@@ -12,7 +12,7 @@ export default async function Page() {
         <div className={styles.about}>
             <h1>About</h1>
             <Image
-                src="/images/placeholder04.webp"
+                src="/images/slider/placeholder04.webp"
                 width={1920}
                 height={1080}
                 alt="Placeholder 04"

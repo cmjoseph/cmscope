@@ -1,6 +1,7 @@
 import styles from "./_assets/scss/page.module.scss";
 import SliderHome from "./_components/slider";
 import Upcoming from "./_components/upcoming";
+import About from "./_components/about";
 
 export default function Home() {
 	const reviews = [
@@ -39,6 +40,7 @@ export default function Home() {
 		<div className={styles.home}>
 			<SliderHome reviews={reviews} />
 			<Upcoming items={reviews} />
+			<About />
 		</div>
 	);
 }

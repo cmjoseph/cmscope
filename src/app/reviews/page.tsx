@@ -12,7 +12,7 @@ export default function Page() {
         <div className={styles.reviews}>
             <h1>Reviews</h1>
             <Image
-                src="/images/placeholder02.webp"
+                src="/images/slider/placeholder02.webp"
                 width={1920}
                 height={1080}
                 alt="Placeholder 02"

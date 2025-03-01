@@ -12,7 +12,7 @@ export default function Page() {
         <div className={styles.contact}>
             <h1>Contact</h1>
             <Image
-                src="/images/placeholder05.webp"
+                src="/images/slider/placeholder05.webp"
                 width={1920}
                 height={1080}
                 alt="Placeholder 05"
