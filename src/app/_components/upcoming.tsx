@@ -7,9 +7,7 @@ export default function Upcoming({items}: any) {
         <div className={styles.upcoming}>
             <div className={styles.container}>
                 <h2>Upcoming Reviews</h2>
-                <div className={styles.grid}>
-                    <Coming items={items} />
-                </div>
+                <Coming items={items} />
             </div>
         </div>
     );

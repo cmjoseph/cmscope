@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Coming({items}: any) {
     const container = useRef<HTMLDivElement>(null);
-    const divRefs = useRef<HTMLDivElement[]>([]);
+    const posters   = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
-        if (divRefs.current.length === 0) return;
-        gsap.from(divRefs.current, {
+        if (posters.current.length === 0) return;
+        gsap.from(posters.current, {
             opacity: 0,
             y: 60,
             duration: 1,
@@ -26,14 +26,14 @@ export default function Coming({items}: any) {
             },
         });
         return () => {
-            // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
 
     return (
         <div className={styles.grid} ref={container}>
             {items.map((item: any, index: any) => (
-                <div key={index} ref={(el: any) => { if (divRefs.current) {(divRefs.current[index] = el)} }} className={styles.grid_item} >
+                <div key={index} ref={(el: any) => { if (posters.current) {(posters.current[index] = el)} }} className={styles.grid_item} >
                     <div className={styles.overlay}>
                         {item.title}
                     </div>

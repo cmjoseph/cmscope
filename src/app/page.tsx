@@ -2,6 +2,7 @@ import styles from "./_assets/scss/page.module.scss";
 import SliderHome from "./_components/slider";
 import Upcoming from "./_components/upcoming";
 import About from "./_components/about";
+import More from "./_components/more";
 
 export default function Home() {
 	const reviews = [
@@ -35,12 +36,13 @@ export default function Home() {
 			'rate'          : '90%',
 			'url'          	: 'https://www.imdb.com/title/tt0137523',
 		},
-	];
+	];	
   	return (
 		<div className={styles.home}>
 			<SliderHome reviews={reviews} />
 			<Upcoming items={reviews} />
 			<About />
+			<More />
 		</div>
 	);
 }

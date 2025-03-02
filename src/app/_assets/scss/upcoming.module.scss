@@ -21,7 +21,7 @@
             &_item {
                 position: relative;
                 width: calc(33.33% - 4em);
-                height: 100%;
+                height: auto;
                 margin: 2em;
                 .overlay {
                     position: absolute;
@@ -30,10 +30,11 @@
                     width: 100%;
                     height: 100%;
                     color: white;
+                    text-transform: uppercase;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 2em;
+                    padding: 0 2em;
                     font-size: 42px;
                     font-weight: bold;
                     text-align: center;

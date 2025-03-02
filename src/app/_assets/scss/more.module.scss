@@ -1,0 +1,90 @@
+.more {
+    position: relative;
+    display: flex;
+    .container {
+        padding: 5em 10em;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            font-size: 52px;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+            color: white;
+            font-weight: bold;
+        }
+        .grid {
+            display: flex;
+            margin: 0 -2em;
+            flex-wrap: wrap;
+            &_item {
+                position: relative;
+                width: calc(25% - 4em);
+                height: auto;
+                margin: 2em;
+                .poster {
+                    position: relative;
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: white;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 2em;
+                        font-size: 42px;
+                        font-weight: bold;
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        opacity: 0;
+                        transition: opacity 0.35s ease;
+                    }
+                    img {
+                        border: 1px solid grey;
+                        width: 100%;
+                        height: 100%;
+                        max-height: 700px;
+                        object-fit: cover;
+                    }
+                    .rate {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 0;
+                        width: 80px;
+                        height: 60px;
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        color: white;
+                        font-size: 24px;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: rgb(0, 128, 0, 0.5);
+                        .color {
+                        }
+                    }
+                }
+                &:hover {
+                    .overlay {
+                        opacity: 1;
+                    }
+                }
+                h4 {
+                    margin-top: 1em;
+                    color: white;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

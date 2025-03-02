@@ -7,10 +7,7 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
     const about     = useRef<HTMLDivElement>(null);
@@ -35,7 +32,7 @@ export default function About() {
                 scrub: true
             },
             opacity: 0,
-            x: -30,
+            x: -60,
             duration: 1,
             ease: 'power3.out',
         });
@@ -47,7 +44,7 @@ export default function About() {
                 scrub: true
             },
             opacity: 0,
-            x: 30,
+            x: 60,
             duration: 1,
             ease: 'power3.out',
         });
