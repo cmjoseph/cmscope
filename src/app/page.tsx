@@ -36,13 +36,23 @@ export default function Home() {
 			'rate'          : '90%',
 			'url'          	: 'https://www.imdb.com/title/tt0137523',
 		},
+		{  
+			'background'    : '/images/movies/thething/background.jpg',
+			'poster'        : '/images/movies/thething/poster.webp',
+			'director'      : 'John Carpenter',
+			'description'   : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi adipisci dolor excepturi suscipit quidem, eveniet expedita explicabo ratione dicta ipsa!',
+			'title'         : 'The Thing',
+			'year'         	: '1982',
+			'rate'          : '91%',
+			'url'          	: 'https://www.imdb.com/title/tt0084787',
+		},
 	];	
   	return (
 		<div className={styles.home}>
 			<SliderHome reviews={reviews} />
 			<Upcoming items={reviews} />
 			<About />
-			<More />
+			<More reviews={reviews} />
 		</div>
 	);
 }
