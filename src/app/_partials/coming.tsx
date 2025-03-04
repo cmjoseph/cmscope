@@ -1,6 +1,6 @@
 "use client";
 import styles from "../_assets/scss/upcoming.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +10,7 @@ export default function Coming({items}: any) {
     const container = useRef<HTMLDivElement>(null);
     const posters   = useRef<HTMLDivElement[]>([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (posters.current.length === 0) return;
         gsap.from(posters.current, {
             opacity: 0,
@@ -27,6 +27,7 @@ export default function Coming({items}: any) {
         });
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            gsap.set(posters.current, { clearProps: "all" });
         };
     }, []);
 

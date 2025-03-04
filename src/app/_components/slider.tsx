@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { EffectFade, Pagination, Autoplay } from 'swiper/modules';
 import { Josefin_Sans } from "next/font/google";
 import styles from "../_assets/scss/slider.module.scss";
 import Image from "next/image";
+import { toSlug } from '../_hooks/slug';
 import Link from "next/link";
 import Button from "../_partials/button";
 import 'swiper/scss';
@@ -17,16 +18,9 @@ const jobold = Josefin_Sans({
 	subsets: ["latin"],
 });
 
-const toSlug = (str: string) => {
-    return str
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")
-      .replace(/[^\w-]+/g, "");
-};
-
 export default function Slider({reviews}: any) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [virtualSlidesEnabled, setVirtualSlidesEnabled] = useState(false);
     const slides = reviews.map((review: any, index: number) => {
         return (
             <SwiperSlide key={index} className={activeIndex === index ? styles.active_slide : ""}>
@@ -74,8 +68,14 @@ export default function Slider({reviews}: any) {
             </SwiperSlide>
         )
     });
+
+    useEffect(() => {
+        setVirtualSlidesEnabled(true);
+    }, []);
+
     return (
-        <Swiper
+        <Swiper  
+            key={virtualSlidesEnabled ? 'virtual' : 'non-virtual'}
             spaceBetween={0}
             slidesPerView={1}
             centeredSlides={true}

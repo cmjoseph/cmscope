@@ -5,25 +5,19 @@ import { FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { FaSquareGithub } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
     const about     = useRef<HTMLDivElement>(null);
-    const portrait  = useRef<HTMLDivElement[]>([]);
-    const bio       = useRef<HTMLDivElement[]>([]);
-    const overlay   = useRef<HTMLDivElement[]>([]);
+    const portrait  = useRef<HTMLDivElement>(null);
+    const bio       = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        gsap.from(overlay.current, {
-            scrollTrigger: {
-                trigger: overlay.current,
-                start: "top 60%",
-                toggleClass: styles.scroll_active,
-                scrub: true
-            },
-        });
+    useLayoutEffect(() => {
         gsap.from(portrait.current, {
             scrollTrigger: {
                 trigger: about.current,
@@ -50,6 +44,7 @@ export default function About() {
         });
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            gsap.set([portrait.current, bio.current], { clearProps: "all" });
         };
     }, []);
 
@@ -58,11 +53,11 @@ export default function About() {
             <div className={styles.overlay}></div>
             <div className={styles.container}>
                 <h2>About Me</h2>
-                <div className={styles.wrapper} ref={(el: any) => { if (overlay.current) {(overlay.current) = el} }}>
-                    <div className={styles.portrait}>
-                        <img ref={(el: any) => { if (portrait.current) {(portrait.current) = el} }} className={styles.picture} src="/portrait.jpg" alt="Claude-Marc Joseph" />
+                <div className={styles.wrapper}>
+                    <div className={styles.portrait} ref={portrait}>
+                        <img className={styles.picture} src="/portrait.jpg" alt="Claude-Marc Joseph" />
                     </div>
-                    <div className={styles.bio} ref={(el: any) => { if (bio.current) {(bio.current) = el} }}>
+                    <div className={styles.bio} ref={bio}>
                         <div className={styles.inner_bio}>
                             <div className={styles.name}>
                                 Claude-Marc Joseph

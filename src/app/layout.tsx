@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
-import { ReactLenis, useLenis } from 'lenis/react';
+import { ReactLenis } from 'lenis/react';
 
 const joreg = Josefin_Sans({
 	weight: '400',
@@ -23,7 +23,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
 				<Header />
 				<main>
 					<ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
-						{children}  
+						{children}
 					</ReactLenis>
 				</main>
 				<Footer />

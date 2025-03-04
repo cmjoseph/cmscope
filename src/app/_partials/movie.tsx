@@ -1,9 +1,9 @@
 "use client";
 import styles from "../_assets/scss/movie.module.scss";
-import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import { toSlug } from "../_hooks/slug";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +12,7 @@ export default function Movie({movies}: any) {
     const container     = useRef<HTMLDivElement>(null);
     const reviews       = useRef<HTMLDivElement[]>([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (reviews.current.length === 0) return;
         gsap.from(reviews.current, {
             opacity: 0,
@@ -29,6 +29,7 @@ export default function Movie({movies}: any) {
         });
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            gsap.set(reviews.current, { clearProps: "all" });
         };
     }, []);
 
